@@ -5,21 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1409d7a7-23e4-4e21-b53a-cad159bd4613" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/app/templates/layout/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/layout/footer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/layout/header.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/admin/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/admin/stats.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/saleapp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/saleapp.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dao.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/dao.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/index.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/index.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -30,12 +24,16 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -51,16 +49,22 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "Python.index.executor": "Run",
     "Python.models.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/python_project/appsale/appdemo/saleapp",
+    "last_opened_file_path": "D:/thuchanhapp/app",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\appsale\appdemo\saleapp\app\templates" />
+      <recent name="D:\appsale\appdemo\saleapp\app" />
+    </key>
+  </component>
   <component name="RunManager" selected="Python.index">
     <configuration name="index" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="saleapp" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -82,7 +86,6 @@
     </configuration>
     <configuration name="models" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="saleapp" />
-      <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -126,5 +129,16 @@
       <updated>1731999632232</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -19,7 +19,7 @@ class BaseModel(db.Model):
     id = Column(Integer, primary_key=True, autoincrement=True)
 
 class Category(BaseModel):
-    name = Column(String(50), nullable=False)
+    name = Column(String(50), nullable=False, unique=True)
 
     products = relationship('Product', backref='category', lazy=True)
 
@@ -53,12 +53,13 @@ class User(BaseModel, UserMixin):
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-        u = User(name="Nguyễn Nam", username="namvfg",
+        u = User(name="Dun", username="admin",
                  password=str(hashlib.md5("123456".encode("utf-8")).digest()),
-                 avatar="https://res.cloudinary.com/dxxwcby8l/image/upload/v1647056401/ipmsmnxjydrhpo21xrd8.jpg")
+                 avatar="https://res.cloudinary.com/dxxwcby8l/image/upload/v1647056401/ipmsmnxjydrhpo21xrd8.jpg",
+                 user_role=UserRole.ADMIN)
         db.session.add(u)
         db.session.commit()
-
+        #
         # c1 = Category(name="Mobile")
         # c2 = Category(name="Tablet")
         # c3 = Category(name="Laptop")

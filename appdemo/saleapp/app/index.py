@@ -1,8 +1,8 @@
 import math
 
 from flask import render_template, request, redirect
-from flask_login import login_user
-
+from flask_login import login_user, logout_user
+from app.models import UserRole
 from app import dao
 from app import app, login
 
@@ -33,10 +33,28 @@ def login_my_user():
             return redirect("/")
     return render_template("login.html")
 
+@app.route("/logout")
+def logout_my_user():
+    logout_user()
+    return redirect("/")
+
+@app.route("/login-admin", methods=["post"])
+def admin_login():
+    username = request.form['username']
+    password = request.form['password']
+
+    user = dao.auth_user(username=username, password=password)
+    if user: #and user["user_role"].__eq__(UserRole.ADMIN)
+        login_user(user)
+    return redirect("/admin")
+
+
+
 @login.user_loader
 def load_user(userid):
     return dao.get_user_by_id(userid)
 
 
 if __name__ == '__main__':
+    from app import admin
     app.run(debug=True)
