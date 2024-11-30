@@ -1,11 +1,25 @@
+from email.policy import default
+
+from flask_admin.contrib.geoa import ModelView
+from flask_sqlalchemy.model import Model
 from app import db, app
-from sqlalchemy import Column, Integer, Float, String, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, Float, String, Boolean, ForeignKey, Enum
 from sqlalchemy.orm import relationship
+from enum import Enum as UserEnum
+from flask_login import UserMixin
+import hashlib
 
+class UserRole(UserEnum):
+    USER = 1
+    ADMIN = 2
 
-class Category(db.Model):
+class BaseModel(db.Model):
+    __abstract__ = True
+
     id = Column(Integer, primary_key=True, autoincrement=True)
-    name = Column(String(50), unique=True)
+
+class Category(BaseModel):
+    name = Column(String(50), nullable=False)
 
     products = relationship('Product', backref='category', lazy=True)
 
@@ -13,8 +27,7 @@ class Category(db.Model):
         return self.name
 
 
-class Product(db.Model):
-    id = Column(Integer, primary_key=True, autoincrement=True)
+class Product(BaseModel):
     name = Column(String(50), nullable=False)
     description = Column(String(255), nullable=True)
     image = Column(String(100), nullable=True)
@@ -25,10 +38,27 @@ class Product(db.Model):
     def __str__(self):
         return self.name
 
+class User(BaseModel, UserMixin):
+    name = Column(String(50), nullable=False)
+    username = Column(String(20), nullable=False)
+    password = Column(String(100), nullable=False)
+    avatar = Column(String(100))
+    active = Column(Boolean, default=True)
+    user_role = Column(Enum(UserRole), default=UserRole.USER)
+
+    def __str__(self):
+        return self.name
+
 
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
+        u = User(name="Nguyễn Nam", username="namvfg",
+                 password=str(hashlib.md5("123456".encode("utf-8")).digest()),
+                 avatar="https://res.cloudinary.com/dxxwcby8l/image/upload/v1647056401/ipmsmnxjydrhpo21xrd8.jpg")
+        db.session.add(u)
+        db.session.commit()
+
         # c1 = Category(name="Mobile")
         # c2 = Category(name="Tablet")
         # c3 = Category(name="Laptop")
